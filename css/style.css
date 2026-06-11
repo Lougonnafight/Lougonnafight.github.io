@@ -1,0 +1,1394 @@
+/* ==========================================
+   1. GLOBAL STYLES, FONTS & RESET
+   ========================================== */
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("/font/SpaceGrotesk.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+  background-image: url("../img/dot.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-width: 320px;
+}
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
+.header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #cbcbcb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+#logo img {
+  padding: 3px;
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-family: "SpaceGrotesk", sans-serif;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #0a8635;
+}
+
+nav ul li.active a {
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+/* ==========================================
+   3. HERO SECTION (MAINPAGE)
+   ========================================== */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 55vh;
+  padding: 40px 10%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.hero-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.hero-about-text-container {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-about-text-container h1 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 3rem;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hero-about-text-container h5 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.hero-text {
+  flex: 2;
+  margin-bottom: 0px;
+}
+
+.hero-text h1 {
+  font-family: "SpaceGrotesk";
+  font-size: 2.6rem;
+  margin-bottom: -25px;
+}
+
+.hero-text h5 {
+  font-family: "SpaceGrotesk";
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.hero-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.hero-img-container img {
+  width: 120%;
+  margin-bottom: 60px;
+  max-width: 400px;
+  height: auto;
+}
+
+/* GLOBAL BUTTONS */
+.hero-button-about button,
+.hero-button-all button {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.1rem;
+  background-color: #2d2d2d;
+  border: 2px solid #2d2d2d;
+  border-radius: 12px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-button-about button:hover {
+  background-color: #0a8635;
+  border-color: #0a8635;
+}
+
+.hero-button-all button:hover {
+  background-color: #dc861c;
+  border-color: #dc861c;
+}
+
+/* ==========================================
+   4. ABOUT SECTION
+   ========================================== */
+.about-section {
+  padding: 60px 10%;
+  margin-top: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.about-text-column {
+  flex: 1.5;
+}
+
+.about-text-column h1 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 3rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-text-column h5 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.about-img-column {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-img-column img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #cbcbcb;
+  display: block;
+}
+
+/* ==========================================
+   5. FUN FACTS SECTION
+   ========================================== */
+.funfacts-section {
+  padding: 60px 10%;
+  margin-top: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.funfacts-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.funfacts-wrapper h1 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 3rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.funfacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.fact-box {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 0px #a8a8a8;
+}
+
+.fact-box:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 7px 0px #a8a8a8;
+  border-color: #cbcbcb;
+}
+
+.fact-box h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #2d2d2d;
+}
+
+.fact-box p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+/* ==========================================
+   6. SONAS SECTION
+   ========================================== */
+.sonas-section {
+  padding: 60px 10%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.sonas-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.sonas-wrapper h2 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.sonas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.sonas-box {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 0px #a8a8a8;
+}
+
+.sonas-box:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 0px 7px 0px #a8a8a8;
+  border-color: #cbcbcb;
+}
+
+.sonas-box h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #2d2d2d;
+}
+
+.sonas-box p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.sonas-img {
+  margin-left: 5px;
+  margin-top: 30px;
+  align-items: center;
+  max-width: 230px;
+}
+
+/* ==========================================
+   7. ALL PROJECTS LIST SNEAKPEEK
+   ========================================== */
+.all-section {
+  padding: 60px 10%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.all-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+.all-wrapper h2 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.all-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.all-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  transition: all 0.2s ease-in-out;
+}
+
+.all-box img {
+  background-color: #ffffff;
+  border: 1.5px solid #a8a8a8;
+  border-radius: 7px;
+  padding: 2px;
+}
+
+.all-box:hover {
+  transform: translate(0px, -2px);
+  box-shadow: 0px 5px 0px #a8a8a8;
+  border-color: #cbcbcb;
+}
+
+.hero-all-grid {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px;
+}
+
+.hero-all-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+.all-box h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.all-box h4:hover {
+  text-decoration: underline;
+  color: #0a8635;
+  cursor: pointer;
+}
+
+.all-box p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.all-img {
+  width: 57px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   8. HERO HOT GRID (POPULÄRE PROJEKTE)
+   ========================================== */
+.hero-hot-section {
+  padding: 10px 10%;
+  margin: 35px;
+}
+
+.hero-hot-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-hot-wrapper h2 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hero-hot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.hero-hot-box {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-hot-box:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 5px 0px #a8a8a8;
+}
+
+.hero-hot-box-banner {
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Banner-Bilder */
+.ae-banner {
+  background-image: url("../img/banner/pop-ae-frame.png");
+}
+.pr-banner {
+  background-image: url("../img/banner/pop-pr-frame.png");
+}
+.bc-banner {
+  background-image: url("../img/banner/pop-bc-frame.png");
+}
+.illu-banner {
+  background-image: url("../img/banner/pop-illu-frame.png");
+}
+
+.hero-hot-box-content {
+  height: 50%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  user-select: none;
+}
+
+.hero-hot-img {
+  width: 55px;
+  height: 55px;
+  object-fit: fill;
+  background-color: #ffffff;
+  border: 1.5px solid #cbcbcb;
+  border-radius: 7px;
+  padding: 3px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.hero-hot-box h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.hero-hot-box h4:hover {
+  text-decoration: underline;
+  color: #0a8635;
+  cursor: pointer;
+}
+
+.hero-hot-box p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================
+   9. NEUE PROJEKTE SEKTION (MAINPAGE)
+   ========================================== */
+.hero-new-section {
+  padding: 10px 10%;
+  margin: 35px;
+}
+
+.hero-new-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-new-wrapper h2 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hero-new-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.hero-new-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hero-new-img {
+  width: 55px;
+  height: 55px;
+  object-fit: fill;
+  background-color: #ffffff;
+  border: 1.5px solid #cbcbcb;
+  border-radius: 7px;
+  padding: 3px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.hero-new-box:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 5px 0px #a8a8a8;
+}
+
+.hero-new-box-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.hero-new-box img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.hero-new-box h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.2rem;
+  color: #2d2d2d;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hero-new-box h4:hover {
+  text-decoration: underline;
+  color: #0a8635;
+  cursor: pointer;
+}
+
+/* ==========================================
+   10. PROJEKT-DETAILED-SIDEBOX
+   ========================================== */
+.project-detail-box {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  max-width: 450px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-banner-pr {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-pr-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-ae {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-ae-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-bc {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-bc-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-cs {
+  width: 100%;
+  height: 150px;
+  background-color: #781192;
+  background-image: url("../img/banner/pop-cs-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-pic {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-pic-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-illu {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-illu-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-etc {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-etc-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-suppe {
+  width: 100%;
+  height: 150px;
+  background-image: url("../img/banner/pop-suppe-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-banner-videogame {
+  width: 100%;
+  height: 150px;
+  background-color: #2d2d2d;
+  background-image: url("../img/banner/pop-1-frame.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.project-middle-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 20px 15px 20px;
+}
+
+.project-icon {
+  width: 55px;
+  height: 55px;
+  object-fit: fill;
+  background-color: #ffffff;
+  border: 1.5px solid #cbcbcb;
+  border-radius: 7px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.project-title-text h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.2rem;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.project-title-text h4:hover {
+  text-decoration: underline;
+  color: #0a8635;
+  cursor: pointer;
+}
+
+.project-category {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.85rem;
+  color: #777777;
+  margin-top: 20px;
+}
+
+.project-description-card {
+  padding: 0 20px 20px 20px;
+}
+
+.project-description-card p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0;
+  background-color: #f1f2f5;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+/* ==========================================
+   11. PROJEKT-PAGE (ZWEI-SPALTEN-LAYOUT & LISTS)
+   ========================================== */
+.project-page-section {
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.project-page-section-illu {
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.project-sidebar {
+  flex-shrink: 0;
+  width: 380px;
+}
+
+.project-feed {
+  flex-grow: 1;
+  max-width: 850px;
+}
+
+.project-feed h2 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.feed-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feed-vertical-list-yt {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.feed-vertical-list-pic {
+  display: flex;
+  flex-direction: repeat(2, 1fr);
+  gap: 10px;
+  padding-top: 10px;
+}
+
+/* Einzelne Video-Reihen */
+.feed-row-box {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width: 200%; /* REPARIERT: War fälschlicherweise auf 200% */
+}
+
+.feed-row-box:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 6px 0px #a8a8a8;
+}
+
+.feed-row-box-pic {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 0px #a8a8a8;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto; /* REPARIERT: War fälschlicherweise auf 200% */
+}
+
+.feed-row-box-pic:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 5px 0px #A8A8A7;
+}
+
+.feed-vertical-list-pic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 200px ist eine super Basisgröße */ 
+  width: 100%; /* REPARIERT: Verhindert das Herausquellen der Seite */
+}
+
+.feed-row-box-pic {
+  width: 100%;
+  /* Keine feste Breite hier, das regelt jetzt das Grid! */
+}
+
+.feed-row-box-pic img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Macht das Bild IMMER perfekt quadratisch, egal wie breit die Spalte wird */
+  object-fit: cover;   /* Schneidet zwar minimal an den Rändern, hält die Kacheln aber perfekt uniform */
+}
+
+.project-feed-yt {
+  flex-grow: 1;
+  max-width: 850px;
+  gap: 50cm;
+}
+
+.feed-row-box-yt {
+  background-color: #ffffff;
+  border: 2px solid #cbcbcb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 0px #bababa;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  width: 160%; /* REPARIERT: War fälschlicherweise auf 200% */
+}
+
+.feed-row-box-yt:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 6px 0px #a8a8a8;
+}
+
+.feed-row-media {
+  width: 45%;
+  height: 100%;
+  background-color: #000000;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feed-row-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feed-row-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 55%;
+  box-sizing: border-box;
+}
+
+.feed-date {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.8rem;
+  color: #888888;
+  margin-bottom: 5px;
+}
+
+.feed-row-content h4 {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.feed-row-content p {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================
+   12. CUSTOM VIDEO PLAYER CONTROLS
+   ========================================== */
+.custom-player {
+  position: relative;
+  background-color: #000;
+}
+
+.custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top: 2px solid #cbcbcb;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none; /* Verhindert, dass man die unsichtbaren Buttons aus Versehen klickt */
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-player:hover .custom-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.player-btn {
+  background-color: #2d2d2d;
+  border: 2px solid #2d2d2d;
+  border-radius: 6px;
+  color: white;
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+}
+
+.player-btn:hover {
+  background-color: #0a8635;
+  border-color: #0a8635;
+}
+
+.progress-bar-container {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #cbcbcb;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #dc861c;
+  transition: width 0.1s linear;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
+}
+
+.custom-player:fullscreen video {
+  width: 100% !important;
+  height: calc(100% - 0px) !important; /* Gibt der Leiste unten genug Luft */
+  object-fit: contain !important; /* Zwingt das Video, das GANZE Bild ohne Cut zu zeigen */
+}
+
+/* Sorgt dafür, dass der Player-Hintergrund im Vollbild tiefschwarz ist, falls Balken entstehen */
+.custom-player:fullscreen {
+  background-color: #000000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-player:fullscreen .custom-controls {
+  position: absolute;
+  bottom: 0;
+  z-index: 2147483647;
+}
+
+/* ==========================================
+   13. FOOTER
+   ========================================== */
+.footer {
+  background-color: #ffffff;
+  border-top: 2px solid #cbcbcb;
+  padding: 30px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.footer p {
+  font-family: "SpaceGrotesk", sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-links a {
+  font-family: "SpaceGrotesk", sans-serif;
+  color: #000;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-hinweis {
+  max-width: 600px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ==========================================
+   14. MEDIA QUERIES (RESPONSIVE STYLES)
+   ========================================== */
+@media (max-width: 992px) {
+  .project-page-section {
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 20px 5% !important;
+  }
+
+  .project-sidebar,
+  .project-feed {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .project-sidebar {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .project-detail-box {
+    max-width: 450px !important;
+    width: 100% !important;
+  }
+
+  .project-banner {
+    height: 130px !important;
+  }
+
+  /* --- HIER IST DIE RADIKALE VIDEO-REPARATUR --- */
+  .feed-row-box {
+    flex-direction: column; /* Video oben, Text unten */
+    height: auto; /* DAS HIER KILLT DEN SCHWARZRAUM! Die Box passt sich dem Inhalt an */
+    width: 100%;
+  }
+
+  .feed-row-media {
+    width: 100%;
+    height: auto; /* Keine feste Höhe fürs Video */
+    aspect-ratio: 16 / 9; /* Erzwingt das perfekte Video-Verhältnis auf jedem Handy */
+    background-color: #000000;
+  }
+
+  .feed-row-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Wenn du "cover" nutzt, füllt das Video die 16:9 Box komplett aus */
+    display: block;
+  }
+
+  .feed-row-content {
+    width: 100%;
+    padding: 20px; /* Der Text hat jetzt unter dem Video unendlich viel Platz */
+  }
+}
+
+/* MOBILE VERSION */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  #top-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #logo img {
+    max-width: 240px;
+    max-height: 40px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .hero-section,
+  .funfacts-section {
+    padding: 10px 5px;
+    margin: 10%;
+  }
+
+  .hero-section {
+    min-height: auto;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 200px;
+  }
+
+  .hero-text {
+    padding: 3%;
+  }
+
+  .hero-text h1,
+  .funfacts-wrapper h1 {
+    font-size: 2rem;
+    margin-top: -70px;
+  }
+
+  .hero-text h5 {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hero-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 5%;
+  }
+
+  .hero-button-container a,
+  .hero-button-container button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-img-container {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero-img-container img {
+    max-width: 250px;
+    margin: 0 auto -110px auto;
+  }
+
+  .about-wrapper {
+    flex-direction: column-reverse;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-text-column h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-img-column {
+    justify-content: center;
+  }
+
+  .about-img-column img {
+    max-width: 280px;
+  }
+
+  .hero-hot-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .hero-hot-wrapper h2 {
+    text-align: center;
+  }
+
+  .hero-hot-box {
+    width: 350px;
+    height: 220px;
+  }
+
+  .hero-hot-box-content {
+    padding: 0 15px;
+    gap: 12px;
+  }
+
+  .hero-hot-box h4 {
+    font-size: 1.05rem;
+  }
+
+  .hero-new-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    justify-content: center;
+    justify-items: center;
+    padding-right: 44px;
+  }
+
+  .hero-new-wrapper h2 {
+    text-align: center;
+  }
+
+  .hero-new-box {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .hero-new-box h4 {
+    font-size: 1.05rem;
+  }
+
+  .feed-row-box-yt {
+        flex-direction: column; /* Video oben, Text unten */
+    height: auto; /* DAS HIER KILLT DEN SCHWARZRAUM! Die Box passt sich dem Inhalt an */
+    width: 100%;
+  }
+}
